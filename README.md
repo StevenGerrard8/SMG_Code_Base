@@ -16,14 +16,14 @@ This implementation provides tools for:
 ## Requirements
 
 - Python 3.12.7
-- Required packages: `numpy`, `pandas`, , `openpyxl`, `matplotlib`, , `numba``networkx``multiprocessing`
+- Required packages: `numpy`, `pandas`, `openpyxl`, `numba`, `llvmlite`
 
 ## Installation
 
 ``` bash
 # Clone the repository
-git clone <repository-url>
-cd slope-matrix-graph
+git clone https://github.com/StevenGerrard8/SMG_Code_Base
+cd SMG_Code_Base
 
 # Install dependencies (if using virtualenv)
 pip install -r requirements.txt
@@ -80,12 +80,7 @@ ObjectName3,value1,value2,value3,...
 - Remaining columns: Numerical values
 - For differential analysis: Both files must have same objects in same order
 
-### Key Steps
 
-1. **Data Preprocessing**: Min-max scaling and optional filtering
-2. **Distance Matrix**: Parallel computation of slope distances
-3. **Clustering**: Union-Find algorithm for efficient clustering
-4. **Visualization**: Color-coded Excel output with cluster information
 
 ## Output
 
