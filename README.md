@@ -6,13 +6,6 @@ The SMG algorithm is designed to identify microbiome correlations primarily base
 - **Clustering Analysis**: Group similar objects based on slope distance measurements
 - **Network Visualization**: Generate colored Excel outputs showing cluster relationships
 
-## Features
-- ✅ **High-performance computing** with Numba JIT compilation
-- ✅ **Parallel processing** using multiprocessing
-- ✅ **Memory-efficient** distance matrix calculations
-- ✅ **Data validation** with comprehensive error checking
-- ✅ **Flexible filtering** with customizable thresholds
-- ✅ **Rich visualization** with color-coded Excel outputs
 
 ## Requirements
 - Python 3.12.7
@@ -65,19 +58,6 @@ ObjectName3,value1,value2,value3,...
 - Remaining columns: Numerical values
 - For differential analysis: Both files must have same objects in same order
 
-## Algorithm Details
-### Slope Distance Calculation
-The core algorithm uses slope-based distance measurements:
-``` python
-def slope_distance(row1, row2):
-    distance = 0.0
-    for i in range(n):
-        for j in range(i + 1, n):
-            diff_A = row1[i] - row1[j]
-            diff_B = row2[i] - row2[j]
-            distance += 2 * abs(diff_A - diff_B)
-    return distance
-```
 ### Key Steps
 1. **Data Preprocessing**: Min-max scaling and optional filtering
 2. **Distance Matrix**: Parallel computation of slope distances
