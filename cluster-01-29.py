@@ -22,6 +22,17 @@ def slope_distance_numba(row1, row2):
         distance += (2 * k - n + 1) * v_sorted[k]
     return 2.0 * distance
 
+# def slope_distance_numba(row1, row2): # original
+#     """Numba-optimized slope distance calculation"""
+#     n = len(row1)
+#     distance = 0.0
+#     for i in range(n):
+#         for j in range(i + 1, n):
+#             diff_A = row1[i] - row1[j]
+#             diff_B = row2[i] - row2[j]
+#             distance += 2 * abs(diff_A - diff_B)
+#     return distance
+
 def generate_unique_colors(num_clusters):
     """Generate a large number of unique colors using HSV color space"""
     colors = []
@@ -143,6 +154,8 @@ def calculate_distance_matrix(df, group_order):
                 distance = slope_distance_numba(
                     data[i],
                     data[j]
+                # df.loc[group_order[i], 1:].values,
+                # df.loc[group_order[j], 1:].values
                 )
                 dist_matrix.iloc[i, j] = distance
                 dist_matrix.iloc[j, i] = distance
